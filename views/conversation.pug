@@ -1,25 +1,10 @@
-//- index.pug
-extends ./layout.pug
-
+//- conversation.pug
+extends ./layout2.pug
 
 block row-content
   div.container
-    div.row.margin-bottom.service-container
-      div.service-header
-        div.row.top-nav
-          div.container
-                ul#nav-mobile
-                  li
-                    img(src='/images/logo.png')
-                  li
-                    img(src='/images/nav.png')
-                  li
-                    img(src='/images/search.png')
-                  li
-                    img(src='/images/location.png')
-                  li
-                    img(src='/images/basket.png')
-      div.dialog-selection
+    div.row
+      div.row.margin-bottom.service-container
         div.col-lg-4.col-md-6.col-xs-12
           div.new-dialog-container#new-dialog.clearfix
             h3.dialog-flow-title +
@@ -45,23 +30,18 @@ block row-content
 
   div.row.conversation-div()
     div.container
-      h3.header-text Have a conversation
-      div.col-lg-6.col-md-6.col-xs-12
-        h4.green-title Flow
+      div.col-lg-12.col-md-12.col-xs-12
+        h4.green-title KIT project advisor
+        a Share |
+        a Print |
+        a End Chat 
         div.conversation-flow-container.clearfix
           div.col-lg-12.col-md-12.col-xs-12
             div.conversation-well.conversation-container.clearfix
-          div.col-lg-10.col-md-10.col-xs-8.no-padding-right
-            input.user-input.form-control#response-input(type='text', placeholder='Type a response')
-          div.col-lg-2.col-md-2.col-xs-4.text-right.no-padding-left
-            button.input-btn.btn.btn-block#send-btn Send
-      div.col-lg-6.col-md-6.col-xs-12
-        h4.green-title Information
-        div.col-lg-12.col-md-12.col-xs-12
-          div.information-container
-        h4.green-title Profile
-        div.col-lg-12.col-md-12.col-xs-12
-          div.profile-container
+          div.col-lg-10.col-md-10.col-xs-8.no-padding-right.no-padding-left
+            input.user-input.form-control#response-input(type='text', placeholder='Enter text...')
+          div.col-lg-2.col-md-2.col-xs-4.text-right.no-padding-left.submit-cont
+            button.input-btn.btn.btn-block#send-btn Submit
   div(style='display:none')
     div.dialog-template
       div.col-lg-4.col-md-6.col-xs-12

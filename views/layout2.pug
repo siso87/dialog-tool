@@ -1,0 +1,42 @@
+//- layout.jade
+doctype html
+html(lang='en')
+  head
+    block title
+      title Dialog Tool
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='shortcut icon', href='/images/favicon.ico', type='image/x-icon')
+    link(rel='icon', href='/images/favicon.ico', type='image/x-icon')
+    link(rel='stylesheet', href='/css/watson-bootstrap-dark.css')
+    link(rel='stylesheet', href='/css/banner.css')
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/diy.css')
+    block extra-stylesheet
+
+  body.claro
+    div.row.service-container
+      div.row.service-container
+      div.service-header
+        div.row.top-nav
+          div.container
+                ul#nav-mobile
+                  li
+                    img(src='/images/logo.png')
+                  li
+                    img(src='/images/nav.png')
+                  li
+                    img(src='/images/search.png')
+                  li
+                    img(src='/images/location.png')
+                  li
+                    img(src='/images/basket.png')
+        div.row.header
+
+      block row-content
+
+    script(type='text/javascript', src='/js/jquery-1.11.1.min.js')
+    script(type='text/javascript', src='/js/index.js')
+    block extra-scripts

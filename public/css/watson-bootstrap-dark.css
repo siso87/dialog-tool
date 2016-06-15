@@ -770,14 +770,14 @@ pre code {
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .container {
+/*   .container {
     width: 750px;
-  }
+  } */
 }
 @media (min-width: 992px) {
-  .container {
+ /*  .container {
     width: 970px;
-  }
+  } */
 }
 /*@media (min-width: 1200px) {
   .container {

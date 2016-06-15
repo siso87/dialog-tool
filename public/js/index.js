@@ -36,10 +36,10 @@ $(document).ready(function() {
 
   var getErrorMessageFromResponse = function(response){
     try{
-      if(!response.responseText) return ''
-      var errorObject = JSON.parse(response.responseText)
-      if(!errorObject.error) return ''
-      return errorObject.error
+      if(!response.responseText) return '';
+      var errorObject = JSON.parse(response.responseText);
+      if(!errorObject.error) return '';
+      return errorObject.error;
     }catch(e){
       if(e instanceof SyntaxError)
         return ''
@@ -64,7 +64,7 @@ $(document).ready(function() {
         createDialogTemplate(dialog, index).appendTo($dialogs);
        });
     }).fail(function(response) {
-      var errorText = getErrorMessageFromResponse(response)
+      var errorText = getErrorMessageFromResponse(response);
       $dialogsError.show();
       $dialogsError.find('.errorMsg').html('Error getting the dialogs' + (errorText?': '+errorText:'.'));
     })
@@ -98,7 +98,11 @@ $(document).ready(function() {
         $('.dialog-selection-link').show();
         //scrollToBottom();
       });
-
+      
+      // TODO: Need to either hide all the other stuff or navigate to new page
+  
+      
+      
       // save dialog, client and conversation id
       conversation.conversation_id = data.conversation_id;
       conversation.client_id = data.client_id;
@@ -111,10 +115,14 @@ $(document).ready(function() {
 
 
       var text = data.response.join('&lt;br/&gt;');
-      $('<p class="chat-watson"/>')
-        .html($('<div/>').html(text).text())
+      
+      $('<div class="chat-watson-cont"/>').html($('<p class="chat-watson"/>')
+        .html($('<div/>').html(text)
+        .text()))
         .appendTo($conversation);
     });
+    scrollToBottom();
+    $('.margin-bottom.service-container').hide();
   };
 
   /**
@@ -131,19 +139,21 @@ $(document).ready(function() {
 
     $userInput.val('').focus();
 
-    $('<p class="chat-human"/>')
-      .html(params.input)
+    $('<div class="chat-human-cont"/>').html($('<p class="chat-human"/>')
+      .html(params.input))
       .appendTo($conversation);
 
     scrollToBottom();
 
     $.post(path, params).done(function(data) {
       var text = data.response.join('&lt;br/&gt;');
-      $('<p class="chat-watson"/>')
-        .html($('<div/>').html(text).text())
+      $('<div class="chat-watson-cont"/>').html($('<p class="chat-watson"/>')
+        .html($('<div/>').html(text).text()))
         .appendTo($conversation);
 
       getProfile();
+      scrollToBottom();
+      findKeywordForImg();
       scrollToBottom();
     });
   };
@@ -173,7 +183,7 @@ $(document).ready(function() {
       setTimeout(getDialogs, 2000);
     })
     .fail(function(e){
-      var errorText = getErrorMessageFromResponse(response)
+      var errorText = getErrorMessageFromResponse(response);
       $dialogsError.show();
       $dialogsError.find('.errorMsg').html('Error deleting the dialogs' + (errorText?': '+errorText:'.'));
       $dialogsError.find('.errorMsg').text('Error  the dialogs.');
@@ -227,7 +237,7 @@ $(document).ready(function() {
       getDialogs();
     })
     .fail(function(response){
-      var errorText = getErrorMessageFromResponse(response)
+      var errorText = getErrorMessageFromResponse(response);
       $dialogsError.show();
       $dialogsError.find('.errorMsg').html('Error creating the dialogs' + (errorText?': '+errorText:'.'));
     })
@@ -322,5 +332,37 @@ $(document).ready(function() {
     });
   });
 
+//search function to find response with keyword for img display
+//get array of elements
+var findKeywordForImg = function(){
+  var eleArr = $('.conversation-well :last-child p');
+  if(eleArr.text().search('We have a large range of them in different constructions') !== -1){
+    attachwoodShedImg();
+  }
+  else if(eleArr.text().search('use that as your budget') !== -1){
+    attachHtmlContent();
+  }
+};
+// search in each
+// if find the one then append the img
+
+
+
+  //Image of wooden sheds TODO: replace with HTML
+  var woodShedImg = '<img class="sugg-chat" src="../images/constructionStyle.png">';
+  var attachwoodShedImg = function(){
+	  $('.conversation-well').append(woodShedImg);
+  };
+  
+  //HTML for 3 suggested sheds
+  // 1. create the container element
+  var targetEleId = 'someClass';
+  var attachHtmlContent = function(){
+	  var htmlContainer = '<div id="' + targetEleId + '"></div>';
+	  $('.conversation-well').append(htmlContainer);  
+	  //2. load the 
+	  $('#' + targetEleId).load('/register .reg-container');
+	  //$('.conversation-well').load('/register .reg-container');
+  };
 
 });
