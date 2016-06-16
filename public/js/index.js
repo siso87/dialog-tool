@@ -145,6 +145,10 @@ $(document).ready(function() {
 
     scrollToBottom();
 
+    //Post input to tone-analyser
+    //if more than 3 words then:
+    postInputToToneAnalyser(params.input);
+
     $.post(path, params).done(function(data) {
       var text = data.response.join('&lt;br/&gt;');
       $('<div class="chat-watson-cont"/>').html($('<p class="chat-watson"/>')
@@ -207,6 +211,7 @@ $(document).ready(function() {
         if (par.value !== '')
           $('<div/>').text(par.name + ': ' + par.value).appendTo($profile);
       });
+      console.debug("profile is: " + $profile);
     });
   };
 
@@ -255,7 +260,6 @@ $(document).ready(function() {
   var scrollToBottom = function(){
     $('body, html').animate({ scrollTop: $('body').height() + 'px' });
   };
-
 
   /**
    * show creating a new dialog flow inputs
@@ -364,5 +368,80 @@ var findKeywordForImg = function(){
 	  $('#' + targetEleId).load('/register .reg-container');
 	  //$('.conversation-well').load('/register .reg-container');
   };
+
+  //POST input to tone analysis
+  var postInputToToneAnalyser = function(data){
+     $.ajax({
+             type: "POST",
+             url: "https://watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone?version=2016-05-19",
+             data: JSON.stringify(data),
+             contentType: "text/plain",
+             success: function (status, result, data) {
+
+                 console.debug(":::::: index.js POST successfully sent to tone-analyzer ::::::::::::");
+                 console.debug(data.responseText);
+             },
+
+             error: function (jqXHR, status) {
+                 // error handler
+                 console.log(jqXHR);
+                 console.debug('fail' + status.code);
+             }
+          }).done(function(data){
+            var emotion_tones = data.document_tone.tone_categories[0];
+            console.log(emotion_tones);
+            var profileObj = {
+              "client_id": conversation.client_id ,
+              "name_values": [
+                {
+                  "name": "PowerReq",
+                  "value": "Some value"
+                },
+                {
+                  "name": "ToneAnger",
+                  "value": emotion_tones.tones[0].score
+                },
+                {
+                  "name": "ToneDisgust",
+                  "value": emotion_tones.tones[1].score
+                },
+                {
+                  "name": "ToneFear",
+                  "value": emotion_tones.tones[2].score
+                },
+                {
+                  "name": "ToneJoy",
+                  "value": emotion_tones.tones[3].score
+                },
+                {
+                  "name": "ToneSadness",
+                  "value": emotion_tones.tones[4].score
+                }
+              ]
+            };
+            updateDialogWithToneAnalysis(data, profileObj);
+            console.debug(data);
+          });
+    };
+
+    var updateDialogWithToneAnalysis = function(data, profileObj){
+      $.ajax({
+          type: "PUT",
+          url: context + "/v1/dialogs/" + conversation.dialog_id +"/profile",
+          contentType: "application/json",
+          data: JSON.stringify(profileObj),
+          success: function (status) {
+            console.debug("successful put with: " + status);
+          },
+          error: function (jqXHR, status){
+                  // error handler
+                 console.log(jqXHR);
+                 console.debug('fail' + status.code);
+                 console.debug(data.responseText);
+             }
+
+        });
+    };
+
 
 });

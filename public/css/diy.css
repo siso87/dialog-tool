@@ -41,6 +41,7 @@ right{
 
 .chat-human, .chat-watson{
 	min-width: 25%;
+	background-color: white;
 }
 
 .chat-watson{
@@ -83,4 +84,7 @@ right{
 	float: left;
 	width:100%;
 	margin-bottom: 15px;
+}
+.profile-container {
+    color: black;
 }
