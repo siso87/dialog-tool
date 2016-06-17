@@ -1,6 +1,4 @@
-#This is the demo version of the dialog tool with significant changes
-
-# Dialog Tool [![Build Status](https://travis-ci.org/watson-developer-cloud/dialog-tool.svg?branch=master)](https://travis-ci.org/watson-developer-cloud/dialog-tool)
+# Kit Advisor [![Build Status](https://travis-ci.org/watson-developer-cloud/dialog-tool.svg?branch=master)](https://travis-ci.org/watson-developer-cloud/dialog-tool)
 
   The Dialog Tool enables you to create, manage, and interact with dialogs for the IBM Watson [Dialog service][service_url].
 
