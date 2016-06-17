@@ -28,8 +28,8 @@ require('./config/express')(app);
 // if bluemix credentials exists, then override local
 var credentials =  extend({
   url: 'https://gateway.watsonplatform.net/dialog/api',
-  username: '<username>',
-  password: '<password>'
+  username: 'def0feb3-05dd-418a-82c5-18794d06c71f',
+  password: 'WiE1q1KkVG8r'
 }, vcapServices.getCredentials('dialog', 'standard')); // VCAP_SERVICES
 
 var apiIndex = credentials.url.indexOf('/api');
@@ -54,6 +54,14 @@ app.use('/proxy', function(req, res, next) {
 app.get('/', function(req, res) {
   res.render('index');
 });
+
+app.get('/conversation', function(req, res) {
+	  res.render('conversation');
+	});
+
+app.get('/register', function(req, res) {
+	res.sendFile( __dirname + '/views/'+ 'register.html');
+	});
 
 require('./config/error-handler')(app);
 
