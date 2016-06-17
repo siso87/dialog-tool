@@ -1,12 +1,10 @@
-#This is the demo version of the dialog tool with significant changes
-
-# Dialog Tool [![Build Status](https://travis-ci.org/watson-developer-cloud/dialog-tool.svg?branch=master)](https://travis-ci.org/watson-developer-cloud/dialog-tool)
+# Kit Advisor [![Build Status](https://travis-ci.org/watson-developer-cloud/dialog-tool.svg?branch=master)](https://travis-ci.org/watson-developer-cloud/dialog-tool)
 
   The Dialog Tool enables you to create, manage, and interact with dialogs for the IBM Watson [Dialog service][service_url].
 
 Give it a try! Click the button below to fork into IBM DevOps Services and deploy your own copy of this application on Bluemix.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/dialog-tool)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/siso87/dialog-tool)
 
 ## Getting started
 
