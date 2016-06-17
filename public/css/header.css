@@ -81,7 +81,8 @@ p.add-to-basket:hover {
 }
 
 .shed-container {
-    padding: 20px
+    padding: 20px;
+    width: 230px;
 }
 
 .shed-image {

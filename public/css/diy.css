@@ -88,6 +88,7 @@ right{
 
 #sugg-sheds{
 	margin-bottom: 15px;
+	float: left;
 }
 .profile-container {
     color: black;
@@ -98,4 +99,8 @@ right{
     bottom: 0px;
     right: 0px;
     margin-bottom: 26px;
+}
+
+#basket img{
+   height: 45px;
 }
