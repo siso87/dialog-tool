@@ -5,6 +5,7 @@
 
 .service-container {
     margin: auto;
+    background-color: grey;
 }
 .service-header {
     padding: 0px;

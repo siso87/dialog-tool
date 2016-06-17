@@ -360,7 +360,7 @@ var findKeywordForImg = function(){
   
   //HTML for 3 suggested sheds
   // 1. create the container element
-  var targetEleId = 'someClass';
+  var targetEleId = 'sugg-sheds';
   var attachHtmlContent = function(){
 	  var htmlContainer = '<div id="' + targetEleId + '"></div>';
 	  $('.conversation-well').append(htmlContainer);  
@@ -419,10 +419,6 @@ var findKeywordForImg = function(){
             var profileObj = {
               "client_id": conversation.client_id ,
               "name_values": [
-                {
-                  "name": "PowerReq",
-                  "value": "Some value"
-                },
                 {
                   "name": "ToneAnger",
                   "value": emotion_tones.tones[0].score

@@ -1,3 +1,7 @@
+body{
+	font-family: sans-serif;
+}
+
 #header {
     background: #3C3C3C;
     color: #EDEDED;
@@ -8,6 +12,8 @@
 ul#nav-mobile li {
     display: inline;
     padding-right: 10px;
+    width: 20%;
+    float: left;
 }
 
 #shed-container {

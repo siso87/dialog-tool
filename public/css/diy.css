@@ -85,6 +85,17 @@ right{
 	width:100%;
 	margin-bottom: 15px;
 }
+
+#sugg-sheds{
+	margin-bottom: 15px;
+}
 .profile-container {
     color: black;
+}
+
+.profile-info{
+	position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin-bottom: 26px;
 }
