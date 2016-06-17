@@ -5,7 +5,7 @@ declared-services:
 applications:
 - services:
   - dialog-service
-  name: dialog-tool
+  name: dialog-tool-sisosib9-2033
   command: npm start
   path: .
   memory: 512M
