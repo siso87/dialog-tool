@@ -1,0 +1,111 @@
+#header {
+    background: #3C3C3C;
+    color: #EDEDED;
+    padding: 10px;
+    width: 100%
+}
+
+ul#nav-mobile li {
+    display: inline;
+    padding-right: 10px;
+}
+
+#shed-container {
+    /*
+    height: 768px;*/
+    width: 1024px;
+}
+
+.details-container {
+    width: 1024px;
+    border: 1px solid #FF6600;
+    margin-top: -1px;
+}
+
+h4.shed-title {
+    font-size: 16px;
+    text-decoration-style: solid;
+    font-weight: 700;
+}
+
+.shed-title a {
+    color: #333;
+}
+
+shed-title a:hover {
+    color: #333;
+}
+
+p.shed-price {
+    font-size: 18px;
+    text-decoration-style: solid;
+    font-weight: 700;
+}
+
+a.shed-details {
+    color: black;
+    text-decoration: underline;
+}
+
+p.add-to-basket {
+    font-size: 16px;
+    text-decoration-style: solid;
+    font-weight: 700;
+    background: #FF6600;
+    color: white;
+    width: 152px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50px;
+    padding: 3px;
+}
+
+p.add-to-basket a {
+    color: #fff;
+    text-decoration: none;
+}
+
+p.add-to-basket a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+p.add-to-basket:hover {
+    background: #be4a00;
+}
+
+.shed-container {
+    padding: 20px
+}
+
+.shed-image {
+    height: 150px;
+}
+
+.shed-rating {
+    height: 30px;
+}
+
+.shed-icons {
+    height: 40px;
+}
+
+.next-prev-buttons {
+    margin-top: 200px;
+}
+
+.tabContent {
+    display: none;
+}
+
+#selected-shed {
+    background: #fff
+}
+
+#shed-arrow {
+    display: none;
+}
+
+#shed-view-two {
+    display: none
+}

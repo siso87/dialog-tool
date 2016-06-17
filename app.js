@@ -63,6 +63,10 @@ app.get('/register', function(req, res) {
 	res.sendFile( __dirname + '/views/'+ 'register.html');
 	});
 
+app.get('/shed', function(req, res) {
+	res.sendFile( __dirname + '/views/'+ 'shed.html');
+	});
+
 require('./config/error-handler')(app);
 
 module.exports = app;

@@ -365,9 +365,35 @@ var findKeywordForImg = function(){
 	  var htmlContainer = '<div id="' + targetEleId + '"></div>';
 	  $('.conversation-well').append(htmlContainer);  
 	  //2. load the 
-	  $('#' + targetEleId).load('/register .reg-container');
+	  $('#' + targetEleId).load('/shed .shed-container');
 	  //$('.conversation-well').load('/register .reg-container');
   };
+  
+  //Asma shed display logic
+  function showStuff(element) {
+      var tabContents = document.getElementsByClassName('tabContent');
+      for (var i = 0; i < tabContents.length; i++) {
+          tabContents[i].style.display = 'none';
+      }
+
+      var tabContentIdToShow = element.id.replace(/(\d)/g, '-$1');
+      document.getElementById(tabContentIdToShow).style.display = 'block';
+      document.getElementById('selected-shed').style.cssText = 'border-top: solid 1px #FF6600; border-right: solid 1px #FF6600; border-left: solid 1px #FF6600;';
+  }
+
+  function nextShed() {
+      document.getElementById('shed-view-one').style.cssText = 'display:none';
+      document.getElementById('tabs-1').style.cssText = 'display:none';
+      document.getElementById('tabs-2').style.cssText = 'display:none';
+      document.getElementById('shed-view-two').style.cssText = 'display:block';
+  }
+
+  function prevShed() {
+      document.getElementById('shed-view-two').style.cssText = 'display:none';
+      document.getElementById('shed-view-one').style.cssText = 'display:block';
+      document.getElementById('selected-shed').style.cssText = 'border: 0px';
+
+  }
 
   //POST input to tone analysis
   var postInputToToneAnalyser = function(data){
