@@ -1,5 +1,5 @@
-body{
-	font-family: sans-serif;
+body {
+    font-family: sans-serif;
 }
 
 #header {
@@ -19,7 +19,7 @@ ul#nav-mobile li {
 #shed-container {
     /*
     height: 768px;*/
-    width: 1024px;
+    /*  width: 1024px;*/
 }
 
 .details-container {
@@ -29,7 +29,7 @@ ul#nav-mobile li {
 }
 
 h4.shed-title {
-    font-size: 16px;
+    font-size: 14px;
     text-decoration-style: solid;
     font-weight: 700;
 }
@@ -49,17 +49,17 @@ p.shed-price {
 }
 
 a.shed-details {
-    color: black;
+    color: #000;
     text-decoration: underline;
+    font-size: 12px
 }
 
 p.add-to-basket {
-    font-size: 16px;
+    font-size: 14px;
     text-decoration-style: solid;
     font-weight: 700;
     background: #FF6600;
     color: white;
-    width: 152px;
     height: 30px;
     text-align: center;
     border-radius: 50px;
@@ -82,7 +82,8 @@ p.add-to-basket:hover {
 
 .shed-container {
     padding: 20px;
-    width: 230px;
+    /*
+    width: 230px;*/
 }
 
 .shed-image {
@@ -90,19 +91,24 @@ p.add-to-basket:hover {
 }
 
 .shed-rating {
-    height: 30px;
+    height: 25px;
 }
 
 .shed-icons {
-    height: 40px;
+    height: 30px;
 }
 
 .next-prev-buttons {
     margin-top: 200px;
 }
 
+.next-prev-icons {
+    height: 40px
+}
+
 .tabContent {
     display: none;
+    width: 100%;
 }
 
 #selected-shed {
@@ -110,9 +116,22 @@ p.add-to-basket:hover {
 }
 
 #shed-arrow {
-    display: none;
+    display: block;
 }
 
 #shed-view-two {
     display: none
+}
+
+#sugg-sheds {
+    margin-bottom: 15px;
+    float: left;
+    background: #fff;
+    width: 100%;
+}
+
+#nav-fixed-top {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }

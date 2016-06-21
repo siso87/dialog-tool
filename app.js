@@ -59,10 +59,6 @@ app.get('/conversation', function(req, res) {
 	  res.render('conversation');
 	});
 
-app.get('/register', function(req, res) {
-	res.sendFile( __dirname + '/views/'+ 'register.html');
-	});
-
 app.get('/shed', function(req, res) {
 	res.sendFile( __dirname + '/views/'+ 'shed.html');
 	});

@@ -5,17 +5,55 @@
     width: 100%
 }
 
+.top-nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 30;
+}
+
 ul#nav-mobile li {
     display: inline;
     padding-right: 120px;
 } 
 
-left{
+.left{
 	float: left;
 }
 
-right{
+.right{
 	float: right;
+}
+
+.conversation-div .container{
+    margin-top: 78px;
+    margin-top: 26px;
+    padding-left: 0;
+}
+
+.service-container{
+    margin-top: 26px;
+}
+
+.chatheader{
+    width: 100%;
+    background-color: white;
+    padding: 15px 15px;
+}
+
+.chatarea{
+    padding-left: 10px;
+}
+
+.kitadvisorchatheader{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.chatheader a:before{
+    content: "";
+    background: url('../images/diysprite.png') no-repeat;
+    width: 30px;
 }
 
 .chat-watson-cont:after {
@@ -27,16 +65,29 @@ right{
     float: left;
     margin: 10px 6px 0 6px;
     background-size: 40px 30px;
+
 }
 
 .chat-human-cont:after{
 	content: "";
     display: inline-block;
-    background: url('../images/watson.svg') no-repeat;
+    background: url('../images/user.png') no-repeat;
     width: 30px;
     height: 30px;
     float: right;
     margin: 0 6px 0 0;
+    margin: 2px 6px 0 0;
+    background-size: 75%;
+}
+
+.chatheadtitle:before{
+    content: "";
+    display: inline-block;
+    background: url('../images/kit_icon.png') no-repeat;
+    width: 30px;
+    height: 26px;
+    background-size: 87%;
+    margin-top: 5px;
 }
 
 .chat-human, .chat-watson{
@@ -103,4 +154,8 @@ right{
 
 #basket img{
    height: 45px;
+}
+
+.conversation-div{
+	min-height: 500px;
 }

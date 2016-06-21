@@ -30,13 +30,14 @@ block row-content
 
   div.row.conversation-div()
     div.container
-      div.col-lg-9.col-md-9.col-xs-9
-        h4.green-title KIT project advisor
-        a Share |
-        a Print |
-        a End Chat 
+      div.col-lg-9.col-md-9.col-xs-9.kitadvisorchatheader
+        div.chatheader
+          h4.green-title.chatheadtitle KIT project advisor
+          // a.right.share Share |
+          // a.right.print Print |
+          // a.right.endchat End Chat 
         div.conversation-flow-container.clearfix
-          div.col-lg-12.col-md-12.col-xs-12
+          div.col-lg-12.col-md-12.col-xs-12.chatarea
             div.conversation-well.conversation-container.clearfix
           div.col-lg-10.col-md-10.col-xs-8.no-padding-right.no-padding-left
             input.user-input.form-control#response-input(type='text', placeholder='Enter text...')
